@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="column" style="width: 50%; float:left">
+        
+        <ul>
+            {% if product.metafields.global.Product-Specifications != blank %}
+            <label><b><u>Product Specifications</u> </b></label>
+            {%endif%}
+            {% for field in product.metafields.global.Product-Specifications %}
+            
+            <li>{{ field | first }}: {{ field | last }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="column">
+        <div style="width: 50%; float:right" class="product-single__description rte">
+            {{ product.description }}
+        </div>
+    </div>
+</div>
